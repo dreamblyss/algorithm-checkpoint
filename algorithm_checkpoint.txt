@@ -1,0 +1,117 @@
+ALGORITHM CHECKPOINT
+=====================
+PROBLEM DEFINITION
+==================
+
+Objective
+At this checkpoint, you are asked to write an algorithm that read a sentence, which ends with a point, character by character and to determine:
+
+ 
+Instructions
+The length of the sentence (the number of characters).
+The number of words in the sentence (assuming that the words are separated by a single space).
+The number of vowels in the sentence.
+You have to keep in mind that: 
+
+Each character will be treated separately.
+The last character is the point.
+Use three variables as counters.
+
+SOLUTION
+=========
+
+ALGORITHM algo_checkpoint
+
+VAR 
+   numberOfWords, numberOfSpace, numberOfVowels: INTEGER
+
+   numberOfWords: INTEGER := 0	
+   numberOfSpace: INTEGER := 0	
+   numberOfVowels: INTEGER := 0	
+
+BEGIN
+
+FOR i FROM 0 TO str.length STEP step DO
+	
+	write(str[i])
+
+	numberOfChars := numberOfChars + 1
+
+      
+
+SWITCH(str[i])DO
+	
+	CASE " ":
+	numberOfSpace := numberOfSpace + 1
+	numberOfWords := numberOfChars - numberOfSpace
+        BREAK;
+
+        CASE "a":
+        CASE "e":
+        CASE "i":
+        CASE "o":
+        CASE "u":
+        numberOfVowels := numberOfVowels + 1
+        BREAK;
+
+        default:
+
+END_SWITCH
+
+END_FOR
+
+Write(numberOfCharacters)
+Write(numberOfWords)
+Write(numberOfVowels)
+Write(str[i])
+
+END	
+
+JAVASCRIPT IMPLEMENTATION
+===========================
+const str = "My name is Henry."
+
+let numberOfChars = 0;
+let numberOfWords = 0;
+let numberOfSpace = 0;
+let numberOfVowels = 0;
+
+for(let i = 0; i <str.length; i ++ ){
+	console.log(str[i]);
+
+//number of characters
+numberOfChars += 1; 
+
+//number of words
+
+switch(str[i]){
+        case " ":
+	numberOfSpace += 1;
+	numberOfWords = numberOfChars - numberOfSpace;
+	break;
+ 
+	case "a":
+	case "e":
+	case "i":
+	case "o":
+	case "u":
+	numberOfVowels += 1;
+        break;
+
+	default:
+        
+	
+	}
+ 
+}
+
+console.log(`Total number of character is ${numberOfChars}`);
+console.log(`Total number of words is ${numberOfWords}`);
+console.log(`Total number of vowels is ${numberOfVowels}`);
+
+
+
+ 
+
+
+
